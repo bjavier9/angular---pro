@@ -1,12 +1,18 @@
 () => {
-  //variables
-  let mensaje = "ey q xopa";
-  const test = "no cambia";
-  console.log(mensaje);
+  //tipo de variables
+  let mensaje: string = "hola";
+  let numero: number = 123; //number
+  let booleano: boolean = true; //true or false
+  let hoy: Date = new Date(); //fecha
 
-  if (true) {
-    let mensaje = "mundo";
-  }
+  let variableRandom: string | number; //aceptan tipos
+  var tipoObject = {
+    nombre: "juan",
+    edad: 23,
+  };
 
-  console.log(mensaje);
+  tipoObject = {
+    nombre: "mia khalifa",
+    edad: 27,
+  };
 };

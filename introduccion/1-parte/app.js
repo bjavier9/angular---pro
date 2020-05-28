@@ -1,11 +1,17 @@
 "use strict";
 (function () {
-    //variables
-    var mensaje = "ey q xopa";
-    var test = "no cambia";
-    console.log(mensaje);
-    if (true) {
-        var mensaje_1 = "mundo";
-    }
-    console.log(mensaje);
+    //tipo de variables
+    var mensaje = "hola";
+    var numero = 123; //number
+    var booleano = true; //true or false
+    var hoy = new Date(); //fecha
+    var variableRandom; //aceptan tipos
+    var tipoObject = {
+        nombre: "juan",
+        edad: 23,
+    };
+    tipoObject = {
+        nombre: "mia khalifa",
+        edad: 27,
+    };
 });
