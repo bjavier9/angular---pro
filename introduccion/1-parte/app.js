@@ -14,4 +14,12 @@
         nombre: "mia khalifa",
         edad: 27,
     };
+    function getEdad(numero) {
+        return numero * 400;
+    }
+    // @TODO: 'literals'
+    var nombre = "Gato";
+    var apellido = "Con botas";
+    var edad = 34;
+    var salida = nombre + " " + apellido + " (" + getEdad(edad) + ")";
 });
