@@ -1,15 +1,13 @@
 "use strict";
 (() => {
-    const enviarMision = (xmen) => {
-        console.log(`Enviando a ${xmen.nombre} a la mision`);
-    };
-    const regresarMision = (xmen) => {
-        console.log(`Enviando a ${xmen.nombre} a la mision`);
-    };
-    const wolverine = {
-        nombre: "Logan",
-        edad: 60,
-    };
-    enviarMision(wolverine);
-    regresarMision(wolverine);
+    //clases
+    class TestClass {
+        constructor(nombre, equipo, nombreReal) {
+            this.nombre = nombre;
+            this.equipo = equipo;
+            this.nombreReal = nombreReal;
+        }
+    }
+    const hulk = new TestClass("cacaroto", "brokoli", "Garen de demacia");
+    console.log(hulk.equipo);
 })();

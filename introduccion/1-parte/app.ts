@@ -1,23 +1,19 @@
 (() => {
-  //interfaces
-  interface xmen {
+  //clases
+  class TestClass {
     nombre: string;
-    edad: number;
-    poder?: string;
+    equipo: string;
+    nombreReal: string;
+    puedePelear?: boolean;
+    peleaGanadas?: number;
+
+    constructor(nombre: string, equipo: string, nombreReal: string) {
+      this.nombre = nombre;
+      this.equipo = equipo;
+      this.nombreReal = nombreReal;
+    }
   }
 
-  const enviarMision = (xmen: xmen) => {
-    console.log(`Enviando a ${xmen.nombre} a la mision`);
-  };
-
-  const regresarMision = (xmen: xmen) => {
-    console.log(`Enviando a ${xmen.nombre} a la mision`);
-  };
-
-  const wolverine: xmen = {
-    nombre: "Logan",
-    edad: 60,
-  };
-  enviarMision(wolverine);
-  regresarMision(wolverine);
+  const hulk = new TestClass("cacaroto", "brokoli", "Garen de demacia");
+  console.log(hulk.equipo);
 })();
