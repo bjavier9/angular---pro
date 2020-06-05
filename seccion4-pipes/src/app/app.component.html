@@ -47,6 +47,36 @@
             <td>number</td>
             <td>{{ PI | number: ".0-2" }}</td>
           </tr>
+          <tr>
+            <td>{{ porcentaje }}</td>
+            <td>percent</td>
+            <td>{{ porcentaje | percent }}</td>
+          </tr>
+          <tr>
+            <td>{{ porcentaje }}</td>
+            <td>percent 2.2-2</td>
+            <td>{{ porcentaje | percent: "2.2-2" }}</td>
+          </tr>
+          <tr>
+            <td>{{ salario }}</td>
+            <td>currency</td>
+            <td>{{ salario | currency }}</td>
+          </tr>
+          <tr>
+            <td>{{ salario }}</td>
+            <td>currency:'eur'</td>
+            <td>{{ salario | currency: "EUR" }}</td>
+          </tr>
+          <tr>
+            <td>{{ salario }}</td>
+            <td>currency:'CAD'</td>
+            <td>{{ salario | currency: "CAD":"symbol":".0-0" }}</td>
+          </tr>
+          <tr>
+            <td>{{ prom }}</td>
+            <td>async</td>
+            <td>{{ prom | async }}</td>
+          </tr>
         </tbody>
       </table>
       <ul>
@@ -54,6 +84,17 @@
           {{ item }}
         </li>
       </ul>
+      <h3>
+        JSON
+      </h3>
+      <div class="row mb-5">
+        <div class="col">
+          <pre>
+       {{ heroe | json }}
+    </pre
+          >
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -9,5 +9,21 @@ export class AppComponent {
   nombre: string = 'Violeta Parra';
   arreglo: number[] = [1, 3, 4, 5, 6, 7, 8, 9, 0];
   PI: number = Math.PI;
+  porcentaje: number = 0.3456;
+  salario: number = 124562.34;
   personas: string[] = ['Juana', 'carla', 'rodrigo', 'Morgan', 'Gatubella'];
+  prom = new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve('Te amo mirame prometido');
+    }, 2000);
+  });
+  heroe = {
+    nombre: 'Laura rosio',
+    clave: '23567',
+    edad: 400,
+    direccion: {
+      calle: 'primera',
+      casa: 23,
+    },
+  };
 }
