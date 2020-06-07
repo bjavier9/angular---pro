@@ -6,11 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  nombre: string = 'Violeta Parra';
+  nombre: string = 'ViOleTa PaRrA';
+  mostrar: boolean = true;
   arreglo: number[] = [1, 3, 4, 5, 6, 7, 8, 9, 0];
   PI: number = Math.PI;
+  url: string = 'https://www.youtube.com/embed/dlRMeLWTV4o';
   porcentaje: number = 0.3456;
   salario: number = 124562.34;
+  idioma: string = 'es';
+  fecha: Date = new Date();
   personas: string[] = ['Juana', 'carla', 'rodrigo', 'Morgan', 'Gatubella'];
   prom = new Promise<string>((resolve) => {
     setTimeout(() => {

@@ -14,6 +14,12 @@
         <tbody>
           <tr>
             <td>{{ nombre }}</td>
+            <td>capitalizado</td>
+            <td>{{ nombre | capitalizado: true }}</td>
+          </tr>
+
+          <tr>
+            <td>{{ nombre }}</td>
             <td>Uppercase</td>
             <td>{{ nombre | uppercase }}</td>
           </tr>
@@ -77,6 +83,53 @@
             <td>async</td>
             <td>{{ prom | async }}</td>
           </tr>
+          <tr>
+            <td>{{ fecha }}</td>
+            <td>date</td>
+            <td>{{ fecha | date }}</td>
+          </tr>
+          <tr>
+            <td>{{ fecha }}</td>
+            <td>date</td>
+            <td>{{ fecha | date: "midium," }}</td>
+          </tr>
+          <tr>
+            <td>{{ fecha }}</td>
+            <td>date</td>
+            <td>{{ fecha | date: "short" }}</td>
+          </tr>
+          <tr>
+            <td>{{ fecha }}</td>
+            <td>date: "MMMM - dd":"":{{ idioma }}</td>
+            <ul>
+              <li>
+                <button (click)="idioma = 'es'" class="mr-1 btn btn-warning">
+                  ES
+                </button>
+              </li>
+              <li>
+                <button (click)="idioma = 'fr'" class="mr-1 btn btn-primary">
+                  FR
+                </button>
+              </li>
+              <li>
+                <button (click)="idioma = 'en'" class="mr-1 btn btn-danger">
+                  EN
+                </button>
+              </li>
+            </ul>
+            <td>{{ fecha | date: "MMMM - dd":"":idioma }}</td>
+          </tr>
+          <tr>
+            <td>{{ fecha }}</td>
+            <td>
+              SECURE
+              <button class="btn btn-primary" (click)="mostrar = !mostrar">
+                mostrar
+              </button>
+            </td>
+            <td>{{ nombre | textSecure: mostrar }}</td>
+          </tr>
         </tbody>
       </table>
       <ul>
@@ -96,5 +149,18 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row mb-5">
+  <div class="col">
+    <iframe
+      width="560"
+      height="315"
+      [src]="url | domSeguro"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
   </div>
 </div>
