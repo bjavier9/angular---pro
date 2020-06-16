@@ -10,37 +10,27 @@ export class SpotifyService {
     console.log('spotyfy Listo');
   }
 
-  getNewsReleases() {
+  getQuery(query: string) {
+    const url = `https://api.spotify.com/v1/${query}`;
+
     const headers = new HttpHeaders({
       Authorization:
-        'Bearer BQBs1PgP18FaGxHKQxLjpFzBdBG_4roCOyZNcp4rjFymwmokYTe18lOZVOSIfYlWWA39mb8NpDuWHCibBhY',
+        'Bearer BQCaSNf1grwmLubM4vXK4ZA-QnqMKAkwy8NnLCp_tEBvj8WyInecvqRD0ZxKXDjDyR3X1J_YcDhlCPIfY4A',
     });
-    return this.http
-      .get('https://api.spotify.com/v1/browse/new-releases', {
-        headers,
+    return this.http.get(url, { headers });
+  }
+  getNewsReleases() {
+    return this.getQuery('browse/new-releases?limit=20').pipe(
+      map((data) => {
+        return data['albums'].items;
       })
-      .pipe(
-        map((data) => {
-          return data['albums'].items;
-        })
-      );
+    );
   }
   getArtista(termino: string) {
-    const headers = new HttpHeaders({
-      Authorization:
-        'Bearer BQBs1PgP18FaGxHKQxLjpFzBdBG_4roCOyZNcp4rjFymwmokYTe18lOZVOSIfYlWWA39mb8NpDuWHCibBhY',
-    });
-    return this.http
-      .get(
-        `https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`,
-        {
-          headers,
-        }
-      )
-      .pipe(
-        map((data) => {
-          return data['artists'].items;
-        })
-      );
+    return this.getQuery(`search?q=${termino}&type=artist&limit=15`).pipe(
+      map((data) => {
+        return data['artists'].items;
+      })
+    );
   }
 }
