@@ -47,6 +47,7 @@ export class Tab1Page {
 		await alert.present();
 	}
 	listaSeleccionada(lista: Lista) {
+		console.log(lista);
 		this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
 	}
 }

@@ -8,9 +8,9 @@
 
 <ion-content color="dark">
   <ion-list color="dark">
-    <ion-item *ngFor="let item of tareas" detail color="dark" (click)="listaSeleccionada(lista)">
+    <ion-item *ngFor="let item of deseosService.listas" detail color="dark" (click)="listaSeleccionada(item)">
       <ion-label>{{item.titulo}}</ion-label>
-      <ion-note>{lista.items.length}}</ion-note>
+      <ion-note>{{item.length}}</ion-note>
     </ion-item>
   </ion-list>
 
