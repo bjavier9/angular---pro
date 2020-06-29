@@ -15,7 +15,14 @@ export class ListasComponent implements OnInit {
 	ngOnInit() {}
 	listaSeleccionada(lista: Lista) {
 		console.log(lista);
-
-		this.router.navigateByUrl(`/tabs/${this.terminado ? 'tab2' : 'tab1'}/agregar/${lista.id}`);
+		if (this.terminado) {
+			this.router.navigateByUrl(`/tabs/tab2/agregar/${lista.id}`);
+		} else {
+			this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
+		}
+	}
+	borrarLista(lista: Lista) {
+		console.log(lista.id);
+		this.deseosService.borrarLista(lista);
 	}
 }
