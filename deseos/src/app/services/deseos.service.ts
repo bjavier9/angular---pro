@@ -40,4 +40,9 @@ export class DeseosService {
 		const cargar = JSON.parse(localStorage.getItem('data'));
 		this.listas = cargar == null ? [] : cargar;
 	}
+	cambiarTitulo(lista: Lista, nuevoTitulo: string): void {
+		var a = this.listas.map((e) => e.titulo).indexOf(lista.titulo);
+		this.listas[a].titulo = nuevoTitulo;
+		this.guardarStorage();
+	}
 }
